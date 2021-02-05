@@ -5,13 +5,15 @@ import { SignupComponent } from './auth-module/signup/signup.component';
 
 import { UserDetailsComponent } from './user-module/user-details/user-details.component';
 import { UserguardService } from './auth-module/guards/userguard.service';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 const routes: Routes = [
-  // { path: '', redirectTo: '/users', pathMatch: 'full' },
+   { path: '', redirectTo: '/signin', pathMatch: 'full' },
   {path:'signup', component:SignupComponent},
   {path: 'signin', component:SigninComponent},
   {path: 'profile', component:UserDetailsComponent, canActivate:[UserguardService]},
-  {path:'users', loadChildren:()=> import('./admin-module/user-routing.module').then(m=> m.UserRoutingModule)},
+  {path:'users', loadChildren:()=> import('./admin-module/admin.module').then(m=> m.AdminModule)},
+  {path:'**', component:PagenotfoundComponent}
   
 ];
 

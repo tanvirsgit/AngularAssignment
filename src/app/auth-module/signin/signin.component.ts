@@ -1,9 +1,8 @@
-import { Component, OnInit, ResolvedReflectiveFactory } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../authentication.service';
 import { User } from '../../model/user';
-import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-signin',

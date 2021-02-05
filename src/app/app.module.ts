@@ -10,15 +10,11 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-//import { TransformDirective } from './shared-module/transform.directive';
-//import { GetFullname } from './shared-module/getname.pipe';
 import { UserModule } from './user-module/user.module';
-//import { AdminModule } from './admin-module/admin.module';
 import { AuthModule } from './auth-module/auth.module';
 import { SharedModule } from './shared-module/shared.module';
-import { AdminModule } from './admin-module/admin.module';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
-//import { AdminModule } from './admin-module/admin.module';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 
 
@@ -42,7 +38,8 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
     
   ],
   declarations: [
-    AppComponent
+    AppComponent,
+    PagenotfoundComponent
   ],
   bootstrap: [ AppComponent ]
 })
