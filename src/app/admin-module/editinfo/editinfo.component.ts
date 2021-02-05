@@ -68,5 +68,8 @@ export class EditinfoComponent implements OnInit {
       
     )
   }
+  goBack(){
+    this.router.navigate(['/users']);
+  }
 
 }
