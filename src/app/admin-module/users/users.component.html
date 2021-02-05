@@ -1,0 +1,60 @@
+<!-- <ul class="heroes">
+  <li *ngFor="let user of users">
+    <a routerLink="/detail/{{ user.id }}">
+      <span class="badge">{{ user.id }}</span> name: {{ user.firstName }}
+    </a>
+  </li>
+</ul> -->
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="list-group">
+        <a
+          *ngFor="let user of users"
+          class="list-group-item list-group-item-action"
+          aria-current="true"
+        >
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">{{ user.firstName | uppercase}}</h5>
+            <small>{{ user.id }}</small>
+          </div>
+          <p class="mb-1">{{ user.address }}</p>
+          <small>Phone No. {{ user.phone }}</small>
+          <div>
+            <button type="button" class="btn btn-primary">Edit</button>
+            <button (click)=deleteUser(user) type="button" class="btn btn-danger">Delete</button>
+          </div>
+        </a>
+        <hr />
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="well well-sm">
+              <h3 class="text-center">Users List</h3>
+                <div appTransform class="row" *ngFor="let user of users">
+                   
+                    <div class="col-sm-8 col-md-10">
+                        <h4>
+                            {{user.firstname|uppercase}} {{user.lastname|uppercase}}</h4>
+                        <small><cite >{{user.address}} <i class="glyphicon glyphicon-map-marker">
+                        </i></cite></small>
+                        <p>
+                            <i class="glyphicon glyphicon-envelope"></i>{{user.email}}
+                            <br />
+                            
+                            <i class="glyphicon glyphicon-gift"></i>{{user.dob|date}}</p>
+                        <!-- Split button -->
+                        <button class="btn btn-primary" routerLink='edit/{{user.id}}' (click)= details(user)>Edit</button>
+                        <button class="btn btn-danger" (click)="deleteUser(user)">Delete</button>
+                    </div>
+                </div>
+                <br>
+            </div>
+        </div>
+    </div>
+</div>

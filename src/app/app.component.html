@@ -1,0 +1,11 @@
+<div class="container">
+  <h1>{{ title }}</h1>
+  <nav>
+    <a *ngIf="!!this.auth.getLoggedUser() && this.auth.getLoggedUser().role==='admin'? true:false" routerLink="/users">Users</a>
+    <a *ngIf="!this.auth.getLoggedUser()" routerLink="/signup">Signup</a>
+    <a *ngIf="!this.auth.getLoggedUser()" routerLink="/signin">Signin</a>
+    <a *ngIf="this.auth.getLoggedUser()" (click)= onLogout() >Logout</a>
+  </nav>
+  <hr>
+  <router-outlet></router-outlet>
+</div>

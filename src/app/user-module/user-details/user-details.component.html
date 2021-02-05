@@ -1,0 +1,13 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 *ngIf="currentUser"class="panel-title">{{currentUser|fullname}}</h3>
+  </div>
+  <div class="panel-body">
+    <div><label >Email:&nbsp;</label><span class="label label-primary">{{currentUser.email}}</span></div>
+    <div><label>Date of Birth:&nbsp; </label><span class="label label-primary"> {{currentUser.dob| date}}</span></div>
+    <div><label>Role:&nbsp; </label><span class="label label-primary"> {{currentUser.role}}</span></div>
+    <div><label>Gender: &nbsp;</label><span class="label label-primary">{{currentUser.gender}}</span></div>
+    <div><label>Address: &nbsp;</label><span class="label label-primary">{{currentUser.address}}</span></div>
+    <div><label>Phone: &nbsp;</label><span class="label label-primary"> {{currentUser.phone}}</span></div>
+  </div>
+</div>

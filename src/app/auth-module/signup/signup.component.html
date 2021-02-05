@@ -1,0 +1,104 @@
+<div class="container">
+  <h2 class="text-center">Registration Form</h2>
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="firstname">First Name</label>
+          <input
+            formControlName="firstname"
+            type="text"
+            id="firstname"
+            class="form-control"
+          />
+        </div>
+        <span
+          *ngIf="
+            !signupForm.get('firstname').valid &&
+            signupForm.get('firstname').touched
+          "
+          class="help-block"
+        >
+          Enter valid first name</span
+        >
+        <div class="form-group">
+          <label for="lastname">Last Name</label>
+          <input
+            formControlName="lastname"
+            type="text"
+            id="lastname"
+            class="form-control"
+          />
+        </div>
+        <span
+          *ngIf="
+            !signupForm.get('lastname').valid &&
+            signupForm.get('lastname').touched
+          "
+          class="help-block"
+        >
+          Enter valid last name</span
+        >
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            formControlName="email"
+            type="email"
+            id="email"
+            class="form-control"
+          />
+        </div>
+        <span
+          *ngIf="
+            signupForm.get('email').invalid && signupForm.get('email').touched
+          "
+          class="help-block"
+        >
+          Enter valid email</span
+        >
+
+        <span
+          *ngIf="signupForm.get('email').errors['Takenemail']"
+          class="help-block"
+          >Email taken</span
+        >
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            formControlName="password"
+            type="password"
+            id="password"
+            class="form-control"
+          />
+        </div>
+        <span
+          *ngIf="
+            !signupForm.get('password').valid &&
+            signupForm.get('password').touched
+          "
+          class="help-block"
+        >
+          Enter password</span
+        >
+
+        <div class="form-group">
+          <label for="role">Role</label>
+          <select formControlName="role" class="form-control">
+            <option *ngFor="let role of roles">{{ role }}</option>
+          </select>
+        </div>
+        <span
+          *ngIf="
+            !signupForm.get('role').valid && signupForm.get('role').touched
+          "
+          class="help-block"
+        >
+          Choose role</span
+        >
+        <button class="btn btn-primary" type="submit">Sign Up</button>
+      </form>
+    </div>
+  </div>
+</div>
